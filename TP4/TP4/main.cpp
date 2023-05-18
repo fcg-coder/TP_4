@@ -18,153 +18,114 @@
  доступа по индексу.*/
 
 
-
 #include <iostream>
+#include <random>
 #include <time.h>
 #include <stdlib.h>
-#include "plenty.hpp"
-using namespace std;
+#include "plenty.cpp"
+using namespace :: std;
 int choose1;
 
 /*Параметризованный класс (или шаблонный класс) в C++ - это класс, который может принимать типы данных в качестве параметров при создании экземпляра.*/
 
 
-//Тут тот же класс
-//template <typename T>
-//class plenty{
-//private:
-//    int size;
-//    T * arr;
-//public:
-//
-//    plenty(int _size, int choose) : size(_size), arr(new T[_size]) {
-//        int R;
-//        size = _size;
-//
-//        if (choose == 1){ // Тут рандомизируем
-//            cout << "\nВерхняя граница рандома \n\t->";
-//            cin >> R;
-//            for (int i = 0; i < size ; i++){
-//                arr[i] = rand() % R;
-//                cout << "["<<i<<"]\t"<< arr[i]<<"\n";
-//            }
-//
-//        }
-//        else {//Тут вводим сами
-//            cout << "Введите размер массивов\t->";
-//            cin >> _size;
-//            size = _size;
-//            T* arr = new T[size];
-//            for (int i = 0; i < size ; i++){
-//                cout <<  "["<<i<<"]\t ->";
-//                cin >> arr[i];
-//                cout << "\n["<<i<<"]\t"<< arr[i]<<"\n";
-//            }
-//        }
-//    };
-//
-//
-//    void print(){
-//        int _size = size;
-//        for (int i = 0; i < _size ; i++){
-//            cout << arr[i]<<"\t";
-//
-//        }
-//        cout << endl;
-//    }
-//
-//
-//    //!= проверка на неравенство множеств
-//    bool operator!=(const plenty& L) const {
-//
-//            for (int i = 0; i < size; i++) {
-//                if (arr[i] != L.arr[i]) {
-//                    cout << "Множества не совпадают\n";
-//                    return true;
-//                }
-//            }
-//            cout << "Множества совпадают\n";
-//            return false;
-//        }
-//
-//    //!= проверка на равенство множеств
-//    bool operator==(const plenty& L) const {
-//
-//            for (int i = 0; i < size; i++) {
-//                if (arr[i] != L.arr[i]) {
-//                    cout << "Множества не совпадают\n";
-//                    return false;
-//                }
-//            }
-//            cout << "Множества совпадают\n";
-//            return true;
-//        }
-//
-//    T& operator [] (int index){
-//        return this->arr[index];
-//    }
-//};
-//
 
 
 
-template <typename T1, int size1, typename T2>
-
-void search(T1 arr[], int size, T2 key){
-    for (int i = 0; i < size; i++){
+template <typename T>
+void search(T arr[], int sizeArr, T key) {
+    for (int i = 0; i < sizeArr; i++) {
         if (arr[i] == key) {
-            cout << "Индекс -> "<< i<< endl;
+            cout << "\nindex -> " << i << endl;
         }
     }
 }
 
-void menu(){
-    
-    cout << "\n\nЗадание 1\n\tНаписать функцию-шаблон последовательного поиска в массиве по ключу. Функция возвращает индексы всех элементов, найденных в массиве, равных ключу. Размер массива и данные задаются пользователем.\n\nЗадание 2\n\tСоздать параметризованный класс «множество» и перегрузить операторы != проверка на неравенство множеств, == проверка на равенство множеств, [] для доступа по индексу\n3\tEXIT\n(1/2/3) ->";
-    cin >> choose1;
-}
 
-void task1(){
-    
-    // Задание 1                                                                                                               Написать функцию-шаблон последовательного поиска в массиве по ключу. Функция возвращает индексы всех элементов, найденных в массиве, равных ключу. Размер массива и данные задаются пользователем.
-    
-    
-    int size,key,choose2;
-    cout << "Введите размер массива\t->";
+
+void task1() {
+
+    int size;
+    cout << "size of mass\t->";
     cin >> size;
-    cout << "Рандомизируем его ?\t->";
-    cin >> choose2;
-    int * arr  = new int [size];
-    cout << "Введите ключ\t->";
-    cin >> key;
-    
-    switch (choose2) {
-        case 1:
-            cout << "\nВведите границу рандома\t->";
-            int R;
-            cin >> R;
-            for (int i = 0; i < size; i ++){
-                cout << "\n[" << i<< "]\t->";
-                arr[i] = rand() % R;
-                cout << arr[i] <<endl;
-            }
-            break;
-        case 0:
-            for (int i = 0; i < size; i ++){
-                cout << "\n[" << i<< "]\t->";
-                cin >> arr[i];
-            }
-            break;
-            
-        default:
-            break;
-    }
-    // Вызов шаблонной функции с конкретными типами
-    search<int, 10, int>(arr, size, key);
 
-    // Освободить выделенную память
-    delete[] arr;
+    //////////////////////////
+
+    int* arr = new int[size];
+    double* arr1 = new double[size];
+    string* arr2 = new string[size];
+
+
+
+
+
+    ////////////////
+    int key;
+    cout << "\nint key\t->";
+    cin >> key;
+
+    for (int i = 0; i < size; i++) {
+        arr[i] = rand() % 10;
+        cout << arr[i] << "\t";
+    }
+
+    // Вызов шаблонной функции с  типами
+    search<int>(arr, size, key);
+
+   
+    //////////////////////////////////
+
+
+
+
+
+
+
+//Для мака
+    std::random_device rd;
+       std::mt19937 gen(rd());
+       std::uniform_real_distribution<double> dis(0.0, 1.0);
+
+       double random_value = dis(gen);
+    double key2;
+
+    cout << "\n\n\ndouble key\t->";
+
+    cin >> key2;
+
+
+    // Генерация массива случайных чисел типа double
+    for (int i = 0; i < size; i++) {
+        arr1[i] = dis(gen);
+        cout << arr1[i] << "\t";
+    }
+
+    // Вызов шаблонной функции с конкретными типами
+    search<double>(arr1, size, key2);
+
+
+
+///////////////////////
+
+    // Заполнение массива случайными словами
+    const std::string words[] = { "apple", "banana", "cherry", "orange", "pear",
+       "kiwi", "strawberry", "mango", "pineapple"};
+
+    string key3;
+    cout << "\nKey\t->";
+    cin >> key3;
+    cout << "\n\n\nWOKABULAR\t->\n";
+    for (int i = 0; i < size; ++i) {
+        int index = rand() % sizeof(words) / sizeof(std::string); // случайный индекс слова в массиве
+        arr2[i] = words[index];
+        std::cout << arr2[i] << "\t";
+    }
+
+    // Вызов шаблонной функции с конкретными типами
+    search<string>(arr2, sizeof(arr2), key3);
+
 }
+
 
 void task2(){
     
@@ -232,17 +193,20 @@ int main(int argc, const char * argv[]) {
 
     bool WORK = true;
     
-    
-    menu();
-    while (WORK){
+    int choose1 = 1;
+    cout << "Задание 1\n\tНаписать функцию-шаблон последовательного поиска в массиве по ключу. Функция возвращает индексы всех элементов, найденных в массиве, равных ключу. Размер массива и данные задаются пользователем.\n\nЗадание 2\n\tСоздать параметризованный класс «множество» и перегрузить операторы != проверка на неравенство множеств, == проверка на равенство множеств, [] для доступа по индексу\n3\tEXIT\n(1/2/3) ->";
+    std::cin >> choose1;
+    while (WORK == true){
         switch (choose1) {
             case 1:
                 task1();
-                menu();
+                cout << "\n\nЗадание 1\n\tНаписать функцию-шаблон последовательного поиска в массиве по ключу. Функция возвращает индексы всех элементов, найденных в массиве, равных ключу. Размер массива и данные задаются пользователем.\n\nЗадание 2\n\tСоздать параметризованный класс «множество» и перегрузить операторы != проверка на неравенство множеств, == проверка на равенство множеств, [] для доступа по индексу\n3\tEXIT\n(1/2/3) ->";
+                std::cin >> choose1;
                 break;
             case 2:
                 task2();
-                menu();
+                cout << "\n\nЗадание 1\n\tНаписать функцию-шаблон последовательного поиска в массиве по ключу. Функция возвращает индексы всех элементов, найденных в массиве, равных ключу. Размер массива и данные задаются пользователем.\n\nЗадание 2\n\tСоздать параметризованный класс «множество» и перегрузить операторы != проверка на неравенство множеств, == проверка на равенство множеств, [] для доступа по индексу\n3\tEXIT\n(1/2/3) ->";
+                std::cin >> choose1;
                 break;
             case 3:
                 WORK = false;
