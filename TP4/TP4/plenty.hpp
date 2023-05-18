@@ -80,6 +80,7 @@ void plenty<T>::print(){
 
 
 
+
 template <typename T>
 bool plenty<T>::operator!=(const plenty& L) const {
     for (int i = 0; i < size; i++) {
@@ -111,6 +112,7 @@ template <typename T>
 T& plenty<T>:: operator [] (int index){
     return this->arr[index];
 }
+
 
 
 #endif /* plenty_hpp */
