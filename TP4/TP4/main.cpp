@@ -21,10 +21,15 @@
 #include <iostream>
 #include <random>
 #include <time.h>
+<<<<<<< Updated upstream
 #include <stdlib.h>
 #include "plenty.cpp"
 using namespace :: std;
 int choose1;
+=======
+#include <clocale>
+using namespace std;
+>>>>>>> Stashed changes
 
 /*Параметризованный класс (или шаблонный класс) в C++ - это класс, который может принимать типы данных в качестве параметров при создании экземпляра.*/
 
@@ -188,8 +193,29 @@ void task2(){
 }
 
 int main(int argc, const char * argv[]) {
+<<<<<<< Updated upstream
 //    srand(time(NULL));
     srand((unsigned int) time(NULL));
+=======
+    srand(time(NULL));
+    setlocale(LC_ALL,"ru_RU");
+    int choose1;
+    
+    cout << "Задание 1\n\tНаписать функцию-шаблон последовательного поиска в массиве по ключу. Функция возвращает индексы всех элементов, найденных в массиве, равных ключу. Размер массива и данные задаются пользователем.\n\nЗадание 2\n\tСоздать параметризованный класс «множество» и перегрузить операторы != проверка на неравенство множеств, == проверка на равенство множеств, [] для доступа по индексу\n(1/2) ->";
+    cin >> choose1;
+    
+    switch (choose1) {
+        case 1:
+            task1();
+            break;
+        case 2:
+            task2();
+            break;
+            
+        default:
+            break;
+    }
+>>>>>>> Stashed changes
 
     bool WORK = true;
     
