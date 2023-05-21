@@ -34,15 +34,19 @@ public:
 	explicit list(T num);
 	void push(const T& num);
 	void pop();
+	
 	bool is_empty();
 	void out();
-	
 	
 	/*
 	* Перегрузить оператор = для присваивания
 двух стеков друг другу, +для сложения двух стеков, == для сравнения двух стеков, -
 для вычитания стеков.
 */
+	void operator==(const list& L) const;
+	void operator+(list<T>& other);
+	void operator-(list<T>& other);
+	void operator=(list<T>& other);
 
 private:
 	struct Node

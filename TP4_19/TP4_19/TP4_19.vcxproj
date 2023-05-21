@@ -21,7 +21,7 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{20bee56c-e6a2-47f7-b7e8-25a5d54b11cc}</ProjectGuid>
+    <ProjectGuid>{b984db18-ca9b-42d8-bda9-00e7534bc6d5}</ProjectGuid>
     <RootNamespace>TP419</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
@@ -128,6 +128,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="plenty.cpp" />
+    <ClCompile Include="Source.cpp" />
     <ClCompile Include="TP4_19.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

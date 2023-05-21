@@ -9,9 +9,6 @@
 #include <iostream>
 using namespace std;
 
-
-
-
 template <typename T> 
 list <T>::list(T num)
 {
@@ -101,3 +98,62 @@ void list <T>::pop()
 двух стеков друг другу, +для сложения двух стеков, == для сравнения двух стеков, -
 для вычитания стеков.
 */
+
+template <typename T>
+void list<T>::operator==(const list& L) const {
+	Node* temp = this->head;
+	Node* other = L.head;
+	bool flag = true;
+	for (int i = 0; i < this->size; i++) {
+		if (temp->data != other->data) {
+			;
+			flag = false;
+		}
+		temp = temp->next;
+		other = other->next;
+	}
+	if (flag) {
+		cout << "True";
+	}	
+	if (!flag) {
+		cout << "FALSE";
+	}
+	
+}
+
+template <typename T>
+void list<T>::operator+(list<T>& other) {
+
+	this->temp = this->head;
+	other.temp = other.head;
+	for (int i = 0; i < this->size; i++) {
+		this->temp->data = this->temp->data + other.temp->data;
+		this->temp = this->temp->next;
+		other.temp = other.temp->next;
+	}
+
+}
+template <typename T>
+void list<T>::operator-(list<T>& other) {
+	;
+	this->temp = this->head;
+	other.temp = other.head;
+	for (int i = 0; i < this->size; i++) {
+		this->temp->data = this->temp->data - other.temp->data;
+		this->temp = this->temp->next;
+		other.temp = other.temp->next;
+	}
+
+
+}
+template <typename T>
+void list<T>::operator=(list<T>& other) {
+	list<T> result;
+	this->temp = this->head;
+	other.temp = other.head;
+	for (int i = 0; i < this->size; i++) {
+		this->temp->data = other.temp->data;
+		this->temp = this->temp->next;
+		other.temp = other.temp->next;
+	}
+}

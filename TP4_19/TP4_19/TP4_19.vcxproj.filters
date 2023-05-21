@@ -18,6 +18,9 @@
     <ClCompile Include="TP4_19.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="Source.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
     <ClCompile Include="plenty.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>

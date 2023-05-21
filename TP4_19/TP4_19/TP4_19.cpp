@@ -134,19 +134,38 @@ void task2(){
         A.push(rand()%100);       
         B.push(rand() % 100);
     }
-
+    cout << "INT###################################################\n";
     cout << "\n\n\nA->\t";
     A.out();
     cout << "\n\n\nB->\t";
     B.out();
 
 
+    A == B;
+   
+    cout << "\n\n\nA + B->\t";
+    A + B;
+    A.out();
+    cout << "\n\n\nA - B->\t";
+    A - B;
+    A.out();
+
+
+    cout << "\n\n\nA = B->\t";
+    A = B;
+    A.out();
+    cout << "\t";
+    B.out();
+ 
+ 
+
+    
     /*
     * Перегрузить оператор = для присваивания
 двух стеков друг другу, +для сложения двух стеков, == для сравнения двух стеков, -
 для вычитания стеков.
 */
-   
+    cout << "\n\n\n\n\ndouble################################################\n";
     list<double> C; // Создание пустого списка
     list<double> D; // Создание пустого списка
  
@@ -160,11 +179,29 @@ void task2(){
     cout << "\n\n\nD->\t";
     D.out();
 
+    C == D;
+
+    cout << "\n\n\nC + D->\t";
+    C + D;
+    C.out();
+    cout << "\n\n\nC - D->\t";
+    C - D;
+    C.out();
+
+
+    cout << "\n\n\nA = B->\t";
+    C = D;
+    C.out();
+    cout << "\t";
+    D.out();
     /*
     * Перегрузить оператор = для присваивания
 двух стеков друг другу, +для сложения двух стеков, == для сравнения двух стеков, -
 для вычитания стеков.
 */
+
+
+    cout << "\n\n\n\n\nstring################################################\n";
     const std::string words[] = { "apple", "banana", "cherry", "orange", "pear",
     "kiwi", "strawberry", "mango", "pineapple",
     "grapefruit", "lemon", "lime", "peach",
@@ -186,6 +223,9 @@ void task2(){
     cout << "\n\n\nF->\t";
     F.out();
 
+
+    E == F;
+
     /*
     * Перегрузить оператор = для присваивания
 двух стеков друг другу, +для сложения двух стеков, == для сравнения двух стеков, -
@@ -204,6 +244,7 @@ int main(int argc, const char * argv[]) {
     
     menu();
     while (WORK){
+        system("cls");
         switch (choose1) {
             case 1:
                 task1();
