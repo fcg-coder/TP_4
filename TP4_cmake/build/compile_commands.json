@@ -1,0 +1,8 @@
+[
+{
+  "directory": "/Users/mak/Документы/Активные проекты/TP/TP4_cmake/build",
+  "command": "/usr/bin/clang++   -Os -DNDEBUG -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -o CMakeFiles/TP4_cmake.dir/main.cpp.o -c \"/Users/mak/Документы/Активные проекты/TP/TP4_cmake/main.cpp\"",
+  "file": "/Users/mak/Документы/Активные проекты/TP/TP4_cmake/main.cpp",
+  "output": "CMakeFiles/TP4_cmake.dir/main.cpp.o"
+}
+]

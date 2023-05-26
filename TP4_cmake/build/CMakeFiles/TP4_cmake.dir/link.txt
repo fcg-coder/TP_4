@@ -1,0 +1,1 @@
+/usr/bin/clang++ -Os -DNDEBUG -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/TP4_cmake.dir/main.cpp.o -o TP4_cmake 
